@@ -1,0 +1,76 @@
+.root {
+  background: #FFF4E2 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px 0 10px;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  @media (max-width: 730px) {
+      padding: 0 10px 0 10px;
+  }
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.inputAndCreate {
+  display: flex;
+  align-items: center;
+  @media (max-width: 730px) {
+    display: none;
+  }
+}
+
+.searchInput {
+  position: relative;
+  margin-right: 15px;
+
+  &:hover, &:focus {
+    input {
+      background: #fff;
+      border-color: darken(#fff4e2, 15%);
+      box-shadow: 0 0 0 3px #FBECC5;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: #323232;
+  }
+  input {
+    width: 340px;
+    background: #F1E8D7;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 40px;
+    border-radius: 10px;
+    color: #323232;
+    transition: all 0.1s ease-in-out;
+    border: 1px solid transparent;
+    @media (max-width: 850px) {
+        width: 238px;
+    }
+  }
+}
+
+.penIcon {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+}
+
+.arrowIcon {
+  @media (max-width: 730px) {
+      display: none !important;
+  }
+}

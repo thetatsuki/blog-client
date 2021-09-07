@@ -1,0 +1,14 @@
+.textField {
+
+  &::before, &::after {
+    display: none;
+  }
+  input {
+    font-size: 36px;
+    font-weight: 500;
+    border: none;
+    &::placeholder {
+      color: #D1D1D1;
+    }
+  }
+}

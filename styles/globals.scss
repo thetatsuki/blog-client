@@ -1,0 +1,55 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto;
+  background: #F2F2F2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: Roboto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  &--full {
+     max-width: 900px;
+  }
+
+  @media (max-width: 650px) {
+      max-width: 100%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  padding: 80px 20px 0 20px;
+  background: #F2F2F2;
+
+  @media (max-width:650px) {
+      padding: 80px 0 0 0;
+  }
+}
+
+.hide {
+  @media (max-width: 1150px) {
+      display: none;
+  }
+}
+.main-layout-white {
+  background: #fff;
+  height: 100vh;
+}
