@@ -37,9 +37,11 @@ const Header: React.FC = () => {
                         <input placeholder="Поиск"/>
                     </div>
 
-                    <Button className={styles.penIcon} variant="contained">
-                        <CreateIcon />
-                    </Button>
+                    <Link href="/write">
+                        <Button className={styles.penIcon} variant="contained">
+                            <CreateIcon />
+                        </Button>
+                    </Link>
                 </div>
             </div>
             <div className="d-flex align-center">
