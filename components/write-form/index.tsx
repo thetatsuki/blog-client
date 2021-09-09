@@ -20,7 +20,7 @@ const WriteForm: React.FC<WriteFormProps> = ({title}) => {
             </div>
 
             <Button style={{minWidth: '140px', minHeight: '40px'}} variant='contained' color='primary'>
-              Опубликовать
+                Опубликовать
             </Button>
         </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
-import {IconButton, Paper, Avatar, Button, Link} from '@material-ui/core';
+import {IconButton, Paper, Avatar, Button} from '@material-ui/core';
+import Link from 'next/link';
 import clsx from 'clsx';
 
 import MenuIcon from '@material-ui/icons/Menu';

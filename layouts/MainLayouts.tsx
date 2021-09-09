@@ -7,13 +7,13 @@ interface MainLayoutsProps {
     hideComments?: boolean,
     hideMenu?: boolean,
     hideFullMenu?: boolean,
-    contentFullWidth?: boolean,
+    contentWidth?: 'middle' | 'full',
     className?: string,
 }
 
 const MainLayouts: React.FC<MainLayoutsProps> = ({
     children,
-    contentFullWidth,
+    contentWidth,
     hideComments,
     hideMenu,
     hideFullMenu,
@@ -28,7 +28,10 @@ const MainLayouts: React.FC<MainLayoutsProps> = ({
                         <LeftNavbar />
                     </div>
                 }
-                <div className={clsx('content', {'content--full': contentFullWidth})}>
+                <div className={clsx('content', {
+                    'content--middle': contentWidth === 'middle',
+                    'content--full': contentWidth === 'full',
+                })}>
                     {children}
                 </div>
                 {!hideComments &&

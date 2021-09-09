@@ -26,7 +26,7 @@ const links = [
 
 const Profile = () => {
     return (
-        <MainLayouts hideMenu contentFullWidth hideComments>
+        <MainLayouts hideMenu contentWidth='middle' hideComments>
             <Paper className="pt-20 pl-20 pr-20" style={{width: '900px'}} elevation={0}>
                 <div className="d-flex align-start justify-between">
                     <Avatar
