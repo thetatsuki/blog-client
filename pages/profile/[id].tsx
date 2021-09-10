@@ -5,6 +5,7 @@ import {Avatar, Button, Paper, Tabs, Tab} from '@material-ui/core';
 import SettingsIcon from '@material-ui/icons/SettingsOutlined';
 import MessageIcon from '@material-ui/icons/TextsmsOutlined';
 import {ProfileCard} from '../../components';
+import clsx from 'clsx';
 
 const subscriptions = [
     {
@@ -27,7 +28,7 @@ const links = [
 const Profile = () => {
     return (
         <MainLayouts hideMenu contentWidth='middle' hideComments>
-            <Paper className="pt-20 pl-20 pr-20" style={{width: '900px'}} elevation={0}>
+            <Paper className="pt-20 pl-20 pr-20" elevation={0}>
                 <div className="d-flex align-start justify-between">
                     <Avatar
                         style={{width: '112px', height: '112px'}}
@@ -53,13 +54,13 @@ const Profile = () => {
 
                 <div>
                     <h1 style={{fontWeight: 700, fontSize: '36px'}} className="mt-10">
-                        Ильнур Галиахметов
+                            Ильнур Галиахметов
                     </h1>
                     <p style={{color: '#346EB8', fontSize: '16px'}} className='cu-p mt-5 mb-10'>
-                        Изменить имя или описание
+                            Изменить имя или описание
                     </p>
                     <p style={{fontSize: '16px'}} className='mt-5'>
-                        На проекте с 27 авг 2021
+                            На проекте с 27 авг 2021
                     </p>
                     <Tabs className="mt-20" value={0} indicatorColor="primary">
                         <Tab label="Статьи" />
@@ -69,13 +70,13 @@ const Profile = () => {
                 </div>
             </Paper>
 
-            <div className='d-flex justify-between mt-15' style={{width: '900px'}}>
-                <div style={{width: '65%'}}>
+            <div className={clsx('d-flex justify-between mt-15', 'info')}>
+                <div className='info-posts'>
                     <Paper className="p-15" elevation={0}>
                         Записи
                     </Paper>
                 </div>
-                <div style={{width: '33%'}}>
+                <div className='info-subs'>
                     <ProfileCard title='Подписчики' />
                     <ProfileCard title='Подписки' items={subscriptions} />
                     <ProfileCard title='Ссылки' items={links} />

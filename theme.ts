@@ -35,13 +35,30 @@ export const theme = createTheme({
                     backgroundColor: '#437CCE',
                 },
             },
+            colorInherit: {
+                textTransform: 'inherit',
+            },
         },
         MuiTab: {
-            textColorInherit: {
+            textColorPrimary: {
                 textTransform: 'inherit',
                 fontSize: '16px',
                 '&:hover': {
                     color: '#346EB8',
+                },
+
+            },
+            selected: {
+                color: 'yellow',
+            },
+        },
+        MuiInput: {
+            underline: {
+                '::before': {
+                    display: 'none',
+                },
+                '::after': {
+                    display: 'none',
                 },
             },
         },

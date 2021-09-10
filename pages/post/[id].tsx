@@ -14,11 +14,13 @@ import MessageIcon from '@material-ui/icons/TextsmsOutlined';
 import AddIcon from '@material-ui/icons/PersonAdd';
 import CommentsPost from '../../components/comments-post';
 
+import {comments} from '../../data/comments';
+
 const PostPage: NextPage = () => {
     return (
-        <MainLayouts contentWidth='full' hideMenu hideComments>
+        <MainLayouts contentWidth='full' hideMenu>
             <Paper square elevation={0}>
-                <div className="m-auto pt-25 pb-25" style={{maxWidth: '720px'}}>
+                <div className="m-auto pt-25 pb-25" style={{maxWidth: '620px'}}>
                     <PostLayout>
                     </PostLayout>
                     <div className='d-flex align-center mt-25 justify-between'>
@@ -26,10 +28,10 @@ const PostPage: NextPage = () => {
                             <Avatar variant='rounded' className='mt-5'/>
                             <div className='ml-10'>
                                 <Typography variant='h6'>
-                          Яна Ломакина
+                                    Яна Ломакина
                                 </Typography>
                                 <Typography variant='inherit'>
-                          вот и юмореска // заходите в инсту
+                                    вот и юмореска // заходите в инсту
                                 </Typography>
                             </div>
                         </div>
@@ -39,12 +41,12 @@ const PostPage: NextPage = () => {
                             </Button>
                             <Button
                                 className='d-flex align-center ml-10'
-                                color='primary'
+                                color='inherit'
                                 variant='contained'
                                 style={{width: '157px', height: '40px', fontSize: '16px'}}
                             >
                                 <AddIcon className="mr-15" />
-                        Подписаться
+                                Подписаться
                             </Button>
                         </div>
                     </div>
@@ -52,7 +54,7 @@ const PostPage: NextPage = () => {
             </Paper>
             <div className="mt-20 mb-20"/>
 
-            <CommentsPost />
+            <CommentsPost comments={comments} />
 
         </MainLayouts>
     );

@@ -4,22 +4,31 @@ import MoreIcon from '@material-ui/icons/MoreHoriz';
 
 import styles from './comment-post.module.scss';
 
-const CommentPost = () => {
+
+interface CommentPostProps {
+    user: {
+        fullName: string,
+        avatar: string,
+    },
+    text: string,
+    createdAd: string
+}
+
+const CommentPost: React.FC<CommentPostProps> = ({user, text, createdAd}) => {
     return (
         <div className={styles.comment}>
             <div className="d-flex align-center">
-                <Avatar/>
+                <Avatar src={user.avatar}/>
                 <Typography className="ml-10">
-                    Marhal_New _Arleana
+                    {user.fullName}
                 </Typography>
                 <Typography className="ml-10" variant={'inherit'} style={{color: '#595959'}}>
-                    1 час
+                    {createdAd}
                 </Typography>
             </div>
 
             <Typography className="mt-5 mb-10">
-                Если не постановка и губернатор начал снимать заранее потому что увидел
-                издалека например пьяную походку,
+                {text}
             </Typography>
             <div className="d-flex align-center">
                 <h4>

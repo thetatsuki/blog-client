@@ -29,11 +29,15 @@
   }
 }
 
+.rootInput {
+
+}
+
 .searchInput {
   position: relative;
   margin-right: 15px;
 
-  &:hover, &:focus {
+  &:hover, &:focus  {
     input {
       background: #fff;
       border-color: darken(#fff4e2, 15%);
