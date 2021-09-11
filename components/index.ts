@@ -4,3 +4,4 @@ export {default as LeftNavbar} from './left-navbar';
 export {default as RightComments} from './right-comments';
 export {default as ProfileCard} from './profile-card';
 export {default as WriteForm} from './write-form';
+export {default as RatingItem} from './rating-item';

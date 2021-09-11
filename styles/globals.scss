@@ -83,3 +83,12 @@ a {
     }
   }
 }
+
+button.button--add {
+  min-width: 34px;
+  width: 34px;
+  min-height: 30px;
+  height: 30px;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+}
