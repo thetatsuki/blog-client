@@ -37,14 +37,6 @@
   position: relative;
   margin-right: 15px;
 
-  &:hover, &:focus  {
-    input {
-      background: #fff;
-      border-color: darken(#fff4e2, 15%);
-      box-shadow: 0 0 0 3px #FBECC5;
-    }
-  }
-
   svg {
     position: absolute;
     top: 8px;
@@ -61,6 +53,13 @@
     color: #323232;
     transition: all 0.1s ease-in-out;
     border: 1px solid transparent;
+
+    &:hover, &:focus {
+      background: #fff;
+      border-color: darken(#fff4e2, 15%);
+      box-shadow: 0 0 0 3px #FBECC5;
+    }
+
     @media (max-width: 850px) {
         width: 238px;
     }

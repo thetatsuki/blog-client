@@ -7,7 +7,7 @@ import RowIcon from '@material-ui/icons/ChevronRightRounded';
 import styles from './right-comments.module.scss';
 
 const RightComments = () => {
-    const [visible, setVisible] = React.useState(true);
+    const [visible, setVisible] = React.useState(false);
 
     const changeVisible = () => {
         setVisible(!visible);

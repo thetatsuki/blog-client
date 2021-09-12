@@ -1,5 +1,11 @@
 import React from 'react';
-import {IconButton, Paper, Avatar, Button} from '@material-ui/core';
+import {
+    IconButton,
+    Paper,
+    Avatar,
+    Button,
+    Typography,
+} from '@material-ui/core';
 import Link from 'next/link';
 import clsx from 'clsx';
 
@@ -9,10 +15,24 @@ import MessageIcon from '@material-ui/icons/TextsmsOutlined';
 import NotificationIcon from '@material-ui/icons/NotificationsNone';
 import ArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import CreateIcon from '@material-ui/icons/Create';
+import UserIcon from '@material-ui/icons/AccountCircleOutlined';
 
 import styles from './header.module.scss';
+import AuthDialog from '../auth-dialog';
 
 const Header: React.FC = () => {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const userAuth = false;
+
     return (
         <Paper classes={{root: styles.root}} elevation={0}>
             <div className="d-flex align-center">
@@ -53,16 +73,30 @@ const Header: React.FC = () => {
                     <NotificationIcon />
                 </IconButton>
                 <div className="d-flex align-center">
-                    <Link href="/profile/1">
-                        <Avatar
-                            className="ml-15"
-                            variant="rounded"
-                            src="https://sun9-55.userapi.com/impg/WLtoFa7rMXqLRHINfvto7xa6cWN0ynNLlHiSlQ/TUGPsdGSUyY.jpg?size=1280x720&quality=95&sign=cfaca872754de100a4769d9fd48bb6bb&type=album"
-                        />
-                    </Link>
-                    <ArrowDown className={clsx('ml-10', styles.arrowIcon)} />
+                    {userAuth ? (
+                        <>
+                            <Link href="/profile/1">
+                                <Avatar
+                                    className="ml-15"
+                                    variant="rounded"
+                                    src="https://sun9-55.userapi.com/impg/WLtoFa7rMXqLRHINfvto7xa6cWN0ynNLlHiSlQ/TUGPsdGSUyY.jpg?size=1280x720&quality=95&sign=cfaca872754de100a4769d9fd48bb6bb&type=album"
+                                />
+                            </Link>
+                            <ArrowDown className={clsx('ml-10', styles.arrowIcon)} />
+                        </>
+                    ): (
+                        <div onClick={handleClickOpen} className="d-flex align-center cu-p ml-10">
+                            <UserIcon />
+                            <Typography className="ml-10" variant={'subtitle1'}>
+                                Войти
+                            </Typography>
+                        </div>
+                    )}
                 </div>
             </div>
+
+            <AuthDialog visible={open} handleClose={handleClose} />
+
         </Paper>
     );
 };
