@@ -1,5 +1,10 @@
 import React from 'react';
-import {Button, TextField} from '@material-ui/core';
+import {Button} from '@material-ui/core';
+
+import {yupResolver} from '@hookform/resolvers/yup';
+import {useForm, FormProvider} from 'react-hook-form';
+import {loginSchema} from '../../../utils/schemas/login.validation';
+import FormField from '../../form-field';
 
 
 interface LoginFormsProps {
@@ -7,34 +12,41 @@ interface LoginFormsProps {
 }
 
 const LoginForms: React.FC<LoginFormsProps> = ({opOpenRegister}) => {
-    return (
-        <>
-            <div className='mt-40'>
-                <TextField
-                    className="mb-20"
-                    size={'small'}
-                    label={'Почта'}
-                    variant={'outlined'}
-                    fullWidth
-                />
-                <TextField
-                    className="mb-20"
-                    size={'small'}
-                    label={'Пароль'}
-                    variant={'outlined'}
-                    fullWidth
-                />
-            </div>
+    const form = useForm({
+        mode: 'onChange',
+        resolver: yupResolver(loginSchema),
+    });
 
-            <div className="d-flex justify-between">
-                <Button variant={'contained'} color={'primary'}>
-                    Войти
-                </Button>
-                <Button onClick={opOpenRegister} color={'primary'}>
-                    Регистрация
-                </Button>
-            </div>
-        </>
+    const onSubmit = (data) => {
+        console.log(data);
+    };
+
+    console.log(form.formState.errors);
+
+    return (
+        <FormProvider {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+                <div className='mt-40'>
+                    <FormField name={'email'} label={'Почта'} />
+                    <FormField name={'password'} label={'Пароль'} />
+                </div>
+                <div className="d-flex justify-between">
+                    <Button
+                        disabled={!form.formState.isValid}
+                        className="mr-10"
+                        style={{width: '120px'}}
+                        type={'submit'}
+                        variant={'contained'}
+                        color={'primary'}
+                    >
+                        Войти
+                    </Button>
+                    <Button onClick={opOpenRegister} color={'primary'}>
+                        Регистрация
+                    </Button>
+                </div>
+            </form>
+        </FormProvider>
     );
 };
 
