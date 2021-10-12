@@ -15,7 +15,7 @@ const FormField: React.FC<FormFieldProps> = ({name, label}) => {
             error={formState.errors[name]?.message}
             helperText={formState.errors[name]?.message}
             {...register(name)}
-            className="mb-20"
+            className="mt-15"
             size={'small'}
             label={label}
             variant={'outlined'}

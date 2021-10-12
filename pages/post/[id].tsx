@@ -1,20 +1,18 @@
 import React from 'react';
 import type {NextPage} from 'next';
-import MainLayouts from '../../layouts/MainLayouts';
-
 import {
     Avatar,
     Button,
     Paper,
     Typography,
 } from '@material-ui/core';
-import PostLayout from '../../layouts/PostLayout';
-
 import MessageIcon from '@material-ui/icons/TextsmsOutlined';
 import AddIcon from '@material-ui/icons/PersonAdd';
+import MainLayouts from '../../layouts/MainLayouts';
+import {comments} from '../../data/comments';
+import PostLayout from '../../layouts/PostLayout';
 import CommentsPost from '../../components/comments-post';
 
-import {comments} from '../../data/comments';
 
 const PostPage: NextPage = () => {
     return (
@@ -22,6 +20,7 @@ const PostPage: NextPage = () => {
             <Paper square elevation={0}>
                 <div className="m-auto pt-25 pb-25" style={{maxWidth: '620px'}}>
                     <PostLayout>
+
                     </PostLayout>
                     <div className='d-flex align-center mt-25 justify-between'>
                         <div className='d-flex align-center'>
