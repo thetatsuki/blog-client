@@ -1,4 +1,4 @@
-import MainLayouts from '../layouts/MainLayouts';
+import MainLayouts from '../components/layouts/MainLayouts';
 
 export default function Custom404() {
     return (

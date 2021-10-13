@@ -1,6 +1,6 @@
 import type {NextPage} from 'next';
 import {NewsPost} from '../components';
-import MainLayouts from '../layouts/MainLayouts';
+import MainLayouts from '../components/layouts/MainLayouts';
 
 const Home: NextPage = () => {
     return (

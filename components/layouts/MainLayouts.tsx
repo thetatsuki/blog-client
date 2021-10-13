@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header, LeftNavbar, RightComments} from '../components';
+import {Header, LeftNavbar, RightComments} from '../index';
 import clsx from 'clsx';
 
 

@@ -8,9 +8,9 @@ import {
 } from '@material-ui/core';
 import MessageIcon from '@material-ui/icons/TextsmsOutlined';
 import AddIcon from '@material-ui/icons/PersonAdd';
-import MainLayouts from '../../layouts/MainLayouts';
+import MainLayouts from '../../components/layouts/MainLayouts';
 import {comments} from '../../data/comments';
-import PostLayout from '../../layouts/PostLayout';
+import PostLayout from '../../components/layouts/PostLayout';
 import CommentsPost from '../../components/comments-post';
 
 

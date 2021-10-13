@@ -9,6 +9,8 @@ import FormField from '../../form-field';
 import {LoginDto} from '../../../utils/api/type';
 import {UserApi} from '../../../utils/api';
 import {Alert} from '@material-ui/lab';
+import {setUserData} from '../../../redux/slices/user';
+import {useDispatch} from 'react-redux';
 
 
 interface LoginFormsProps {
@@ -17,6 +19,7 @@ interface LoginFormsProps {
 
 const LoginForms: React.FC<LoginFormsProps> = ({opOpenRegister}) => {
     const [errorMessage, setErrorMessage] = React.useState<string>('');
+    const dispatch = useDispatch();
 
     const form = useForm({
         mode: 'onChange',
@@ -30,6 +33,7 @@ const LoginForms: React.FC<LoginFormsProps> = ({opOpenRegister}) => {
                 maxAge: 30 * 24 * 60 * 60,
                 path: '/',
             });
+            dispatch(setUserData(data));
             setErrorMessage('');
         } catch (err) {
             console.warn('Ошибка при регистриации');

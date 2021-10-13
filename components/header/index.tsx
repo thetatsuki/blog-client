@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 import Link from 'next/link';
 import clsx from 'clsx';
+import {useSelector} from 'react-redux';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
@@ -19,9 +20,11 @@ import UserIcon from '@material-ui/icons/AccountCircleOutlined';
 
 import styles from './header.module.scss';
 import AuthDialog from '../auth-dialog';
+import {selectUserData} from '../../redux/slices/user';
 
 const Header: React.FC = () => {
     const [open, setOpen] = React.useState(false);
+    const userData = useSelector(selectUserData);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -73,7 +76,7 @@ const Header: React.FC = () => {
                     <NotificationIcon />
                 </IconButton>
                 <div className="d-flex align-center">
-                    {userAuth ? (
+                    {userData ? (
                         <>
                             <Link href="/profile/1">
                                 <Avatar

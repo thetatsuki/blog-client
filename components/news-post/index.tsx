@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 
 import styles from './news-post.module.scss';
-import PostLayout from '../../layouts/PostLayout';
+import PostLayout from '../layouts/PostLayout';
 
 const NewsPost: React.FC = () => {
     return (

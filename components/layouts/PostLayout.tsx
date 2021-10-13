@@ -1,6 +1,6 @@
 import React from 'react';
 import {Avatar, IconButton, Typography} from '@material-ui/core';
-import styles from '../components/news-post/news-post.module.scss';
+import styles from '../news-post/news-post.module.scss';
 import clsx from 'clsx';
 import MoreIcon from '@material-ui/icons/MoreHoriz';
 import CommentsIcon from '@material-ui/icons/ModeCommentOutlined';

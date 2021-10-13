@@ -1,5 +1,5 @@
 import React from 'react';
-import MainLayouts from '../../layouts/MainLayouts';
+import MainLayouts from '../../components/layouts/MainLayouts';
 import {Avatar, Button, Paper, Tabs, Tab} from '@material-ui/core';
 
 import SettingsIcon from '@material-ui/icons/SettingsOutlined';

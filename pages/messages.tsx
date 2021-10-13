@@ -1,6 +1,6 @@
 import React from 'react';
 import type {NextPage} from 'next';
-import MainLayouts from '../layouts/MainLayouts';
+import MainLayouts from '../components/layouts/MainLayouts';
 
 const MessagesPage: NextPage = () => {
     return (

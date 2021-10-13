@@ -1,6 +1,6 @@
 import React from 'react';
 import type {NextPage} from 'next';
-import MainLayouts from '../layouts/MainLayouts';
+import MainLayouts from '../components/layouts/MainLayouts';
 import {Paper, Typography, Tabs, Tab, Avatar, Button} from '@material-ui/core';
 
 import AddIcon from '@material-ui/icons/Add';
