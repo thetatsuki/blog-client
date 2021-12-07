@@ -16,4 +16,13 @@ export const UserApi = {
         const {data} = await Axios.post<RegisterDto, {data: ResponseUserAuth}>('/auth/login', dto);
         return data;
     },
+    async getMe(token: string) {
+        console.log('ЗАПРОС');
+        const {data} = await Axios.get<ResponseUserAuth>('/users/me', {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        });
+        return data;
+    },
 };

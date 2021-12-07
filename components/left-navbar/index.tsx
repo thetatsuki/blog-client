@@ -18,6 +18,7 @@ const menu = [
     {text: 'Подписки', icon: <SubscribeIcon />, path: '/follows'},
 ];
 
+
 const LeftNavbar: React.FC = () => {
     const router = useRouter();
 

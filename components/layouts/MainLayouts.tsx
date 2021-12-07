@@ -21,7 +21,6 @@ const MainLayouts: React.FC<MainLayoutsProps> = ({
 }) => {
     return (
         <>
-            <Header/>
             <div className={clsx('wrapper', className)}>
                 {!hideFullMenu &&
                     <div className={clsx(hideMenu && 'hide')}>

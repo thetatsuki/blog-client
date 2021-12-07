@@ -98,8 +98,7 @@ const Header: React.FC = () => {
                 </div>
             </div>
 
-            <AuthDialog visible={open} handleClose={handleClose} />
-
+            {!userData && <AuthDialog visible={open} handleClose={handleClose} />}
         </Paper>
     );
 };

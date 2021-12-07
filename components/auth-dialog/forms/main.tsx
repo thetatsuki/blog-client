@@ -1,11 +1,37 @@
 import React from 'react';
 import {Button} from '@material-ui/core';
+import {useDispatch} from 'react-redux';
+import {setUserData} from '../../../redux/slices/user';
+import {setCookie} from 'nookies';
 
 interface MainFormProps {
     onOpenLogin: () => void,
 }
 
 const MainForm: React.FC<MainFormProps> = ({onOpenLogin}) => {
+    const dispatch = useDispatch();
+
+    const onClickAuth = () => {
+        const win = window.open(
+            'http://localhost:5000/auth/vkontakte',
+            'Auth',
+            'width=500,height=500,status=yes,toolbar=no,menubar=no,location=no',
+        );
+    };
+
+    React.useEffect(() => {
+        window.addEventListener('message', ({data}) => {
+            if (typeof data === 'string') {
+                const user = JSON.parse(data);
+                dispatch(setUserData(user));
+                setCookie(null, 'token', user.access_token, {
+                    maxAge: 30 * 24 * 60 * 60,
+                    path: '/',
+                });
+            }
+        });
+    }, []);
+
     return (
         <>
             <Button color="inherit" variant='contained' startIcon={
@@ -23,15 +49,17 @@ const MainForm: React.FC<MainFormProps> = ({onOpenLogin}) => {
                 Facebook
             </Button>
 
-            <Button color="inherit" variant='contained' startIcon={
-                <svg fill="none" viewBox="0 0 24 24" id="v_twitter">
+            <Button onClick={onClickAuth} color="inherit" variant='contained' startIcon={
+                <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M19.953 7.983c.012.174.012.347.012.523C19.965 13.844 15.837 20 8.29 20v-.003A11.75 11.75 0 012 18.186a8.322 8.322 0 006.073-1.674c-1.756-.033-3.296-1.16-3.834-2.806a4.152 4.152 0 001.853-.07C4.178 13.256 2.8 11.6 2.8 9.676v-.05c.57.312 1.21.486 1.863.505a4.007 4.007 0 01-1.27-5.394 11.708 11.708 0 008.456 4.22 4.002 4.002 0 011.187-3.86 4.153 4.153 0 015.806.176c.919-.178 1.8-.51 2.606-.98a4.067 4.067 0 01-1.804 2.233A8.26 8.26 0 0022 5.89a8.267 8.267 0 01-2.047 2.093z"
-                        fill="#1D9BF0"
-                    />
+                        d="M0 23.04C0 12.1788 0 6.74826 3.37413 3.37413C6.74826 0 12.1788 0 23.04 0H24.96C35.8212 0 41.2517 0 44.6259 3.37413C48 6.74826 48 12.1788 48 23.04V24.96C48 35.8212 48 41.2517 44.6259 44.6259C41.2517 48 35.8212 48 24.96 48H23.04C12.1788 48 6.74826 48 3.37413 44.6259C0 41.2517 0 35.8212 0 24.96V23.04Z"
+                        fill="#0077FF"/>
+                    <path
+                        d="M25.54 34.5801C14.6 34.5801 8.3601 27.0801 8.1001 14.6001H13.5801C13.7601 23.7601 17.8 27.6401 21 28.4401V14.6001H26.1602V22.5001C29.3202 22.1601 32.6398 18.5601 33.7598 14.6001H38.9199C38.0599 19.4801 34.4599 23.0801 31.8999 24.5601C34.4599 25.7601 38.5601 28.9001 40.1201 34.5801H34.4399C33.2199 30.7801 30.1802 27.8401 26.1602 27.4401V34.5801H25.54Z"
+                        fill="white"/>
                 </svg>
             }>
-                Twitter
+                Вконтакте
             </Button>
 
             <Button onClick={onOpenLogin} color="inherit" variant='contained' startIcon={

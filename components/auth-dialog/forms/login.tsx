@@ -41,7 +41,6 @@ const LoginForms: React.FC<LoginFormsProps> = ({opOpenRegister}) => {
         }
     };
 
-    console.log(form.formState.errors);
 
     return (
         <FormProvider {...form}>

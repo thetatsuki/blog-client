@@ -27,6 +27,7 @@
     "clsx": "^1.1.1",
     "macro-css": "^1.0.5",
     "next": "11.1.2",
+    "next-redux-wrapper": "^7.0.5",
     "node-sass": "^5.0.0",
     "nookies": "^2.5.2",
     "prettier": "^2.4.1",
